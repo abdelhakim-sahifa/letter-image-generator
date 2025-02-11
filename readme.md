@@ -1,10 +1,10 @@
-# Letter Image Generator
+# [Letter Image Generator](https://letter-image-generator.vercel.app/generate_image?firstname=John&lastname=Doe)
 
-This Flask application generates an image featuring the first letter of a given name. The letter is centered within a square image, and the font is customizable. You can specify the name via a URL parameter, and the app will respond with an image that contains the first letter of the name.
+This Flask application generates an image featuring the initials of a given first name and last name. The initials are centered within a square image, and the font is customizable. You can specify the names via URL parameters, and the app will respond with an image containing the initials.
 
 ## Features
 
-- Generates an image with the first letter of a given name.
+- Generates an image with the initials of a given first name and last name.
 - Customizable font (default font is used if a custom font is not available).
 - Returns the image in PNG format.
 
@@ -40,7 +40,7 @@ This Flask application generates an image featuring the first letter of a given 
    pip install -r requirements.txt
    ```
 
-5. Ensure you have the necessary font file (`Kagitingan-Bold.otf`) in the `fonts` directory or adjust the path in the code.
+5. Ensure you have the necessary font file (`Kagitingan-Bold.otf`) in the `fonts` directory. If the font file is not available, the application will fall back to the default font.
 
 ## Usage
 
@@ -53,23 +53,32 @@ python app.py
 The app will run locally, and you can access the endpoint:
 
 ```
-http://127.0.0.1:5000/generate_image?name=John
+http://127.0.0.1:5000/generate_image?firstname=John&lastname=Doe
 ```
 
-Replace `John` with any name, and the app will return an image with the first letter of that name.
+Replace `John` and `Doe` with any first name and last name, and the app will return an image with the initials of those names.
 
-## Example
+### Example
 
 - Request:
   ```
-  http://127.0.0.1:5000/generate_image?name=John
+  http://127.0.0.1:5000/generate_image?firstname=John&lastname=Doe
   ```
-- Response: An image with the letter 'J' centered on a white background.
+- Response: An image with the initials 'JD' centered on a white background.
 
 ## Contributing
 
-Feel free to open issues or pull requests for improvements.
+Feel free to open issues or pull requests for improvements. Contributions are welcome!
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
+
+---
+
+### Key Updates:
+
+1. **Clarified Functionality**: The application now generates initials for both first name and last name, so the description has been updated to reflect this.
+2. **Updated Usage Instructions**: The example URL now includes both `firstname` and `lastname` parameters.
+3. **Improved Readability**: Simplified and reorganized sections for better clarity.
+4. **Font Handling Note**: Added a note about the fallback to the default font if the custom font is not available.

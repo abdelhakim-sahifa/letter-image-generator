@@ -11,13 +11,16 @@ def main():
 
 @app.route('/generate_image', methods=['GET'])
 def generate_image():
-    name = request.args.get('name', default='A', type=str).strip()
+    first_name = request.args.get('firstname', default='A', type=str).strip()
+    last_name = request.args.get('lastname', default='A', type=str).strip()
 
-    if not name:
-        name = "A"  # Default letter if the input is empty
+    if not first_name:
+        last_name = "A"  # Default letter if the input is empty
+    if not last_name:
+        last_name = "A"  # Default letter if the input is empty
 
-    # Get the first letter of the name
-    first_letter = name[0].upper()
+    
+    letters = first_name[0].upper() +  last_name[0].upper()
 
     # Create an image with a white background
     img = Image.new('RGB', (200, 200), color='white')
@@ -33,7 +36,7 @@ def generate_image():
         font = ImageFont.load_default()
 
     # Get the bounding box of the text
-    bbox = draw.textbbox((0, 0), first_letter, font=font)
+    bbox = draw.textbbox((0, 0), letters, font=font)
     text_width = bbox[2] - bbox[0]
     text_height = bbox[3] - bbox[1]
 
@@ -41,7 +44,7 @@ def generate_image():
     position = ((200 - text_width) // 2, (200 - text_height) // 2)
 
     # Draw the text on the image
-    draw.text(position, first_letter, fill="black", font=font)
+    draw.text(position, letters, fill="black", font=font)
 
     # Save the image to a bytes buffer
     img_byte_array = io.BytesIO()
