@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def main():
-    return 'Try: <a href="/generate_image?name=John">/generate_image?name=John</a>'
+    return 'Try: <a href="/generate_image?firstname=Bob&lastname=Smith">/generate_image?firstname=Bob&lastname=Smith</a>'
 
 @app.route('/generate_image', methods=['GET'])
 def generate_image():
