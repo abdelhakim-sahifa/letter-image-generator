@@ -1,4 +1,4 @@
-# [Letter Image Generator](https://letter-image-generator.vercel.app/generate_image?firstname=John&lastname=Doe)
+# [Letter Image Generator](https://letter-image-generator.vercel.app)
 
 This Flask application generates an image featuring the initials of a given first name and last name. The initials are centered within a square image, and the font is customizable. You can specify the names via URL parameters, and the app will respond with an image containing the initials.
 
