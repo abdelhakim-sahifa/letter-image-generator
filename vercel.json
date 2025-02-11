@@ -1,14 +1,5 @@
 {
-  "version": 2,
-  "routes": [
-    {
-      "src": "/generate_image",
-      "dest": "/app.py"
-    }
-  ],
-  "build": {
-    "env": {
-      "LD_LIBRARY_PATH": "/usr/lib"
-    }
-  }
-}
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/api/index" }
+  ]
+} 
